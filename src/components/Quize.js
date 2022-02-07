@@ -39,9 +39,6 @@ const useStyles = makeStyles((theme) => ({
     userSelect: 'none',
     WebkitTapHighlightColor: 'transparent',
     cursor: 'pointer',
-    // '&&:focus': {
-    // //   backgroundColor: theme.palette.warning.light,
-    // },
     '&:active': {
       boxShadow: theme.shadows[1],
     },
@@ -140,6 +137,7 @@ const Quize = () => {
     >
       <Grid xs={12} className={classes.header}>
         <ButtonAppBar />
+        
       </Grid>
       <Grid
         item
@@ -188,8 +186,7 @@ const Quize = () => {
               avatar={<Avatar>A</Avatar>}
             />
           </Grid>
-        </Grid>))}
-        
+        </Grid>))}   
       </Grid>
     </Grid>
   );
