@@ -54,78 +54,78 @@ const Quize = () => {
 
   const data = [
     {
-        "id": 1,
-        "content": "what is the color?",
-        "createdAt": "2022-02-07T08:46:33.577Z",
-        "updatedAt": "2022-02-07T08:46:33.577Z",
-        "variants": [
-            {
-                "id": 9,
-                "variant": "yellow",
-                "isCorrect": true,
-                "createdAt": "2022-02-07T08:46:33.577Z",
-                "updatedAt": "2022-02-07T08:46:33.577Z"
-            },
-            {
-                "id": 10,
-                "variant": "green",
-                "isCorrect": false,
-                "createdAt": "2022-02-07T08:46:33.577Z",
-                "updatedAt": "2022-02-07T08:46:33.577Z"
-            },
-            {
-                "id": 11,
-                "variant": "blue",
-                "isCorrect": false,
-                "createdAt": "2022-02-07T08:46:33.577Z",
-                "updatedAt": "2022-02-07T08:46:33.577Z"
-            },
-            {
-                "id": 12,
-                "variant": "dark",
-                "isCorrect": false,
-                "createdAt": "2022-02-07T08:46:33.577Z",
-                "updatedAt": "2022-02-07T08:46:33.577Z"
-            }
-        ]
+      id: 1,
+      content: 'what is the color?',
+      createdAt: '2022-02-07T08:46:33.577Z',
+      updatedAt: '2022-02-07T08:46:33.577Z',
+      variants: [
+        {
+          id: 9,
+          variant: 'yellow',
+          isCorrect: true,
+          createdAt: '2022-02-07T08:46:33.577Z',
+          updatedAt: '2022-02-07T08:46:33.577Z',
+        },
+        {
+          id: 10,
+          variant: 'green',
+          isCorrect: false,
+          createdAt: '2022-02-07T08:46:33.577Z',
+          updatedAt: '2022-02-07T08:46:33.577Z',
+        },
+        {
+          id: 11,
+          variant: 'blue',
+          isCorrect: false,
+          createdAt: '2022-02-07T08:46:33.577Z',
+          updatedAt: '2022-02-07T08:46:33.577Z',
+        },
+        {
+          id: 12,
+          variant: 'dark',
+          isCorrect: false,
+          createdAt: '2022-02-07T08:46:33.577Z',
+          updatedAt: '2022-02-07T08:46:33.577Z',
+        },
+      ],
     },
     {
-        "id": 2,
-        "content": "what is the color?",
-        "createdAt": "2022-02-07T08:47:12.396Z",
-        "updatedAt": "2022-02-07T08:47:12.396Z",
-        "variants": [
-            {
-                "id": 13,
-                "variant": "cc",
-                "isCorrect": true,
-                "createdAt": "2022-02-07T08:47:12.396Z",
-                "updatedAt": "2022-02-07T08:47:12.396Z"
-            },
-            {
-                "id": 14,
-                "variant": "cc",
-                "isCorrect": false,
-                "createdAt": "2022-02-07T08:47:12.396Z",
-                "updatedAt": "2022-02-07T08:47:12.396Z"
-            },
-            {
-                "id": 15,
-                "variant": "ss",
-                "isCorrect": false,
-                "createdAt": "2022-02-07T08:47:12.396Z",
-                "updatedAt": "2022-02-07T08:47:12.396Z"
-            },
-            {
-                "id": 16,
-                "variant": "cc",
-                "isCorrect": false,
-                "createdAt": "2022-02-07T08:47:12.396Z",
-                "updatedAt": "2022-02-07T08:47:12.396Z"
-            }
-        ]
-    }
-]
+      id: 2,
+      content: 'what is the color?',
+      createdAt: '2022-02-07T08:47:12.396Z',
+      updatedAt: '2022-02-07T08:47:12.396Z',
+      variants: [
+        {
+          id: 13,
+          variant: 'cc',
+          isCorrect: true,
+          createdAt: '2022-02-07T08:47:12.396Z',
+          updatedAt: '2022-02-07T08:47:12.396Z',
+        },
+        {
+          id: 14,
+          variant: 'cc',
+          isCorrect: false,
+          createdAt: '2022-02-07T08:47:12.396Z',
+          updatedAt: '2022-02-07T08:47:12.396Z',
+        },
+        {
+          id: 15,
+          variant: 'ss',
+          isCorrect: false,
+          createdAt: '2022-02-07T08:47:12.396Z',
+          updatedAt: '2022-02-07T08:47:12.396Z',
+        },
+        {
+          id: 16,
+          variant: 'cc',
+          isCorrect: false,
+          createdAt: '2022-02-07T08:47:12.396Z',
+          updatedAt: '2022-02-07T08:47:12.396Z',
+        },
+      ],
+    },
+  ];
   return (
     <Grid
       Grid
@@ -137,7 +137,6 @@ const Quize = () => {
     >
       <Grid xs={12} className={classes.header}>
         <ButtonAppBar />
-        
       </Grid>
       <Grid
         item
@@ -152,7 +151,7 @@ const Quize = () => {
             icon={<QuestionMarkIcon fontSize="inherit" />}
             severity="success"
           >
-           {data[index].content}
+            {data[index].content}
           </Alert>
         </Grid>
       </Grid>
@@ -163,30 +162,32 @@ const Quize = () => {
         justifyContent="center"
         alignItems="center"
       >
-       { data[index].variants.map((item, i)=>( <Grid
-          container
-          item
-          xs={12}
-          sm={6}
-          justifyContent="center"
-          alignItems="center"
-        >
-         <Grid item>
-            <Chip
-              onClick={() => setIndex(index + 1)}
-              clickable
-              classes={{
-                root: classes.root,
-                avatar: classes.avatar,
-                clickable: classes.clickable,
-              }}
-              className={cx(classes.chip)}
-              label={item.variant}
-              variant="outlined"
-              avatar={<Avatar>A</Avatar>}
-            />
+        {data[index].variants.map((item, i) => (
+          <Grid
+            container
+            item
+            xs={12}
+            sm={6}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item>
+              <Chip
+                onClick={() => setIndex(index + 1)}
+                clickable
+                classes={{
+                  root: classes.root,
+                  avatar: classes.avatar,
+                  clickable: classes.clickable,
+                }}
+                className={cx(classes.chip)}
+                label={item.variant}
+                variant="outlined"
+                avatar={<Avatar>A</Avatar>}
+              />
+            </Grid>
           </Grid>
-        </Grid>))}   
+        ))}
       </Grid>
     </Grid>
   );
