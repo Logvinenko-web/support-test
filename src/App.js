@@ -3,9 +3,9 @@ import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Routes, Route } from 'react-router-dom';
 import Quizer from './components/Quize';
-import Auth from './components/Auth';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { PublicRoute } from './components/PublicRoure/PublicRoute';
+import {AuthContainer} from "./pages/AuthContainer";
 
 const theme = createTheme({});
 
@@ -17,7 +17,7 @@ function App() {
           path="/"
           element={
             <PublicRoute>
-              <Auth />
+              <AuthContainer />
             </PublicRoute>
           }
         />
