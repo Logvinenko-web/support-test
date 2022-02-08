@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export const Error = ({ message }) => {
   const classes = useStyles();
   return (

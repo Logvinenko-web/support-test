@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
 import store from './store';
 
 ReactDOM.render(
@@ -13,8 +14,9 @@ ReactDOM.render(
     <StyledEngineProvider injectFirst>
       <BrowserRouter>
         <Provider store={store}>
-        <App />
-        </Provider>,
+          <App />
+        </Provider>
+        ,
       </BrowserRouter>
       ,
     </StyledEngineProvider>

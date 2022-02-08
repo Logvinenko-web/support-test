@@ -1,9 +1,9 @@
-import api from '../settings/api/api'
+import api from '../settings/api/api';
 
-const login = (payload) => api.post('/signin', payload);
+const login = (payload) => api.post('/user/signin', payload);
 
 const UserService = {
-  login
+  login,
 };
 
 export default UserService;

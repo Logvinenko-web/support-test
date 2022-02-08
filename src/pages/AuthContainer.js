@@ -1,11 +1,15 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Auth } from './Auth';
-import routing from '../routing/routing'
+import routing from '../routing/routing';
 import { useNavigate } from 'react-router-dom';
-import {signInSelectors} from "../modules/signIn/signInSelectors";
-import {REQUEST, SUCCESS} from "../constants/constants";
-import {clearAllErrors, pushSignIn, saveSignInField} from "../modules/signIn/signInActions";
+import { signInSelectors } from '../modules/signIn/signInSelectors';
+import { REQUEST, SUCCESS } from '../constants/constants';
+import {
+  clearAllErrors,
+  pushSignIn,
+  saveSignInField,
+} from '../modules/signIn/signInActions';
 
 export const AuthContainer = () => {
   const dispatch = useDispatch();
@@ -38,7 +42,6 @@ export const AuthContainer = () => {
     },
     [dispatch]
   );
-
 
   const loading = status === REQUEST;
   return (

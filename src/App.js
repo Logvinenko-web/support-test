@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Quizer from './components/Quize';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { PublicRoute } from './components/PublicRoure/PublicRoute';
-import {AuthContainer} from "./pages/AuthContainer";
+import { AuthContainer } from './pages/AuthContainer';
 
 const theme = createTheme({});
 

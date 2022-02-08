@@ -18,7 +18,6 @@ import {
 import { saveToken } from '../../helpers/tokenChecker';
 import Validation from '../../services/validation.service';
 
-
 function* logoutWorker() {
   try {
     localStorage.removeItem('token');
@@ -48,8 +47,8 @@ function* loginWorker() {
       yield put(pushSignIn.failure(errors));
     }
   } catch (e) {
+    Notification.error(e.response?.data?.error);
     yield put(pushSignIn.failure());
-    Notification.error(e?.response?.data?.error);
   }
 }
 

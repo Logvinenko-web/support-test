@@ -196,7 +196,6 @@ class Validation {
     return errors;
   }
 
-
   static changePassword(body) {
     const { newPassword } = body;
     const errors = {
@@ -208,7 +207,6 @@ class Validation {
       isValid: !Object.keys(errors).length,
     };
   }
-
 }
 
 export default Validation;

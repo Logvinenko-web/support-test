@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
-import {login} from "./modules/signIn/signInReducer";
-
+import { login } from './modules/signIn/signInReducer';
 
 /* Unite all reducers */
 const rootReducer = combineReducers({
-  login
+  login,
 });
 
 export default (state, action) => {

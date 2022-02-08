@@ -4,5 +4,5 @@ import { loggedIn } from '../../helpers/tokenChecker';
 
 export const PublicRoute = ({ children }) => {
   const isLoggedIn = loggedIn();
-  return isLoggedIn ? <Navigate to="/quize" />  : children;
+  return isLoggedIn ? <Navigate to="/quize" /> : children;
 };
