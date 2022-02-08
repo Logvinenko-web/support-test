@@ -4,14 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
+import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
       <BrowserRouter>
-        <App />
-      </BrowserRouter>,
+        <Provider store={store}>
+          <App />
+        </Provider>
+        ,
+      </BrowserRouter>
+      ,
     </StyledEngineProvider>
   </React.StrictMode>,
   document.getElementById('root')
