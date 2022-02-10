@@ -62,6 +62,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "react-timer-hook": "^3.0.5"
   }
 }

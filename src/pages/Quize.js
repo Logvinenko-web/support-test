@@ -6,13 +6,14 @@ import cx from 'classnames/bind';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import Alert from '@mui/material/Alert';
 import { alpha } from '@material-ui/core/styles/colorManipulator';
+import { MyTimer } from '../components/Timer/Timer';
 
 const useStyles = makeStyles((theme) => ({
   quizeWrapper: {
     height: '90vh',
   },
-  alert : {
-    fontSize : '20px'
+  alert: {
+    fontSize: '20px',
   },
   chip: {
     padding: '15px',
@@ -20,8 +21,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'start',
   },
   label: {
-     whiteSpace: 'wrap'
-
+    whiteSpace: 'wrap',
   },
   root: {
     verticalAlign: 'left',
@@ -37,11 +37,10 @@ const useStyles = makeStyles((theme) => ({
       width: 40,
       height: 40,
     },
-    "& .MuiChip-label": {
-      whiteSpace: "normal",
+    '& .MuiChip-label': {
+      whiteSpace: 'normal',
       fontSize: '16px',
     },
-
   },
 
   avatar: {
@@ -53,11 +52,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Quize = ({ questionList,currentQuestionIndex, handleAnswerSubmit }) => {
+export const Quize = ({
+  questionList,
+  currentQuestionIndex,
+  handleAnswerSubmit,
+  expiryTimestamp,
+}) => {
   const classes = useStyles();
-  const avatarMap = ['A','B','C','D']
+  const avatarMap = ['A', 'B', 'C', 'D'];
   return (
-    
     <Grid
       Grid
       container
@@ -66,7 +69,9 @@ export const Quize = ({ questionList,currentQuestionIndex, handleAnswerSubmit })
       justifyContent="center"
       alignItems="center"
     >
-      
+      <Grid item container xs={10} justifyContent="center" alignItems="center">
+        <MyTimer expiryTimestamp={expiryTimestamp} />
+      </Grid>
       <Grid
         item
         container
@@ -92,7 +97,6 @@ export const Quize = ({ questionList,currentQuestionIndex, handleAnswerSubmit })
         spacing={4}
         justifyContent="center"
         alignItems="center"
-        
       >
         {!!questionList.length &&
           questionList[currentQuestionIndex].variants.map((item, i) => (
@@ -104,9 +108,10 @@ export const Quize = ({ questionList,currentQuestionIndex, handleAnswerSubmit })
               justifyContent="center"
               alignItems="center"
             >
-              <Grid item >
-                <Chip sx={{width:'80vw', height: 'auto'}}
-                  onClick={() => 
+              <Grid item>
+                <Chip
+                  sx={{ width: '80vw', height: 'auto' }}
+                  onClick={() =>
                     handleAnswerSubmit(item.id, currentQuestionIndex)
                   }
                   clickable
@@ -114,7 +119,7 @@ export const Quize = ({ questionList,currentQuestionIndex, handleAnswerSubmit })
                     root: classes.root,
                     avatar: classes.avatar,
                     clickable: classes.clickable,
-                    lable: classes.lable
+                    lable: classes.lable,
                   }}
                   className={cx(classes.chip)}
                   label={item.variant}

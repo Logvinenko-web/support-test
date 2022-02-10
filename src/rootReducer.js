@@ -7,7 +7,7 @@ import { answer } from './modules/answer/answerReducer';
 const rootReducer = combineReducers({
   login,
   question,
-  answer
+  answer,
 });
 
 export default (state, action) => {
