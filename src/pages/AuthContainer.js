@@ -21,7 +21,7 @@ export const AuthContainer = () => {
 
   useEffect(() => {
     if (status === SUCCESS) {
-      history(routing().quize);
+      history(routing().greeting);
     }
   }, [status]);
 

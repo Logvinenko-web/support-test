@@ -16,9 +16,7 @@ ReactDOM.render(
         <Provider store={store}>
           <App />
         </Provider>
-        ,
       </BrowserRouter>
-      ,
     </StyledEngineProvider>
   </React.StrictMode>,
   document.getElementById('root')
