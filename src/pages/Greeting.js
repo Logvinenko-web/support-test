@@ -7,11 +7,18 @@ export const Greeting = ({
   // errors,
 }) => {
   return (
-    <>
-      WELCOM
-      <Button onClick={redirectToQuize} variant="outlined">
-        Почати
-      </Button>
-    </>
+    <div className="starWrapper">
+      <div className="greetingContainer">
+        <div className="star">
+          <div>
+            <p class="center">ТЕСТ I</p>
+            <p> НОВАЯ НАДЕЖДА ДЛЯ CУПОРТА</p>
+            <Button onClick={redirectToQuize} variant="outlined">
+              Почати
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -24,36 +24,35 @@ export const QuizeContainer = () => {
 
   // useEffect(
   //   () => {
-  //     // e.preventDefault();  
+  //     // e.preventDefault();
   //     dispatch(pushAnswer({questionId: '1', answerId: '1'}));
   //   },
   //   [dispatch]
   // );
 
-  const handleAnswerSubmit = (variantId, indexQuestion)=>{
+  const handleAnswerSubmit = (variantId, indexQuestion) => {
     // dispatch(pushAnswer({questionId: questionList[indexQuestion].id.toString(), variantId: variantId.toString()}));
-      if(questionList.length - 1 === index ){
-        history(routing().greeting);
-      }else {
-        setIndex(index + 1)
-      }
-      
-  }
+    if (questionList.length - 1 === index) {
+      history(routing().greeting);
+    } else {
+      setIndex(index + 1);
+    }
+  };
   const loading = status === REQUEST;
   return (
     <>
-      {loading ? 
+      {loading ? (
         <div>Loading....</div>
-       : 
+      ) : (
         <Quize
           currentQuestionIndex={index}
           questionList={questionList}
           // setIndex={setIndex}
-          handleAnswerSubmit= {handleAnswerSubmit}
+          handleAnswerSubmit={handleAnswerSubmit}
           //   errors={errors}
           //   loading={loading}
         />
-      }
+      )}
     </>
   );
 };
