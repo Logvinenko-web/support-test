@@ -1,5 +1,5 @@
 const dev = {
-  apiUrl: 'http://localhost:3030/',
+  apiUrl: 'https://powerful-peak-56207.herokuapp.com/',
 };
 
 const prod = {
