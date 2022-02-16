@@ -12,20 +12,13 @@ code {
     monospace;
 }
 .authWrapper {
-  background: url(./assets/yoda.jpg);
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center center;
+  
   /* position: relative; */
-  color: white;
+  /* color: white; */
 }
-.authButton {
-  padding-top: 20px;
-  padding-left: 73px;
-}
+
 .starWrapper {
+  
   background-color: black;
   width: 100%;
   height: 100vh;
@@ -43,7 +36,7 @@ code {
 
 .star {
   position: absolute;
-  top: -50px;
+  top: -100px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -51,6 +44,33 @@ code {
   font-size: 50px;
   text-align: center;
   font-family: sans-serif;
+}
+.resultWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.resultText{
+  padding-top: 30px;
+  font-size:40px;
+  color: #ff6;
+  text-align: center;
+}
+.resultBox{
+  background: url(./assets/May_the_4th_be_with_you_\(Star_Wars_Day\).gif);
+  background-size: cover;
+  width: 40%;
+  height: 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.questionCreateButton {
+  margin-left: 30px;
+}
+.spanGreeting {
+  font-size: 20px;
 }
 .star > div {
   padding-top: 200px;
@@ -66,4 +86,22 @@ code {
   to {
     margin-top: -100px;
   }
+}
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.admin-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items:center;
+  background: url(./assets/adminWallper.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

@@ -5,9 +5,12 @@ import { Routes, Route } from 'react-router-dom';
 import { QuizeContainer } from './pages/QuizeContainer';
 import { GreetingContainer } from './pages/GreetingContainer';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
+import { AdmineRoute } from './components/AdmineRoute/AdmineRoute';
 import { PublicRoute } from './components/PublicRoure/PublicRoute';
 import { AuthContainer } from './pages/AuthContainer';
+import { AdminPanelContainer } from './pages/AdminPanelContainer';
 
+import Result from './pages/Result';
 const theme = createTheme({});
 
 function App() {
@@ -36,6 +39,22 @@ function App() {
             <PrivateRoute>
               <QuizeContainer />
             </PrivateRoute>
+          }
+        />
+        <Route
+          path="/result"
+          element={
+            <PrivateRoute>
+              <Result />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin-panel"
+          element={
+            <AdmineRoute>
+              <AdminPanelContainer />
+            </AdmineRoute>
           }
         />
       </Routes>

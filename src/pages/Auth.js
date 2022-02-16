@@ -5,11 +5,21 @@ import CardContent from '@mui/material/CardContent/index';
 import Button from '@mui/material/Button/index';
 import Grid from '@mui/material/Grid/index';
 import { makeStyles } from '@mui/styles/index';
-import { useNavigate } from 'react-router-dom/index';
-
+import Image from '../assets/yoda.jpg';
 const useStyles = makeStyles((theme) => ({
-  colorTextArea: {
-    color: 'red',
+  authWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    background: `url(${Image})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+  },
+  cardBox: {
+    maxWidth: 375,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   label: {
     color: theme.palette.common.white,
@@ -31,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
       border: `1px solid ${theme.palette.primary.light}`,
     },
   },
+  authButton: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   notchedOutline: {},
   helperText: {
     color: theme.palette.error.light,
@@ -45,20 +60,10 @@ export const Auth = ({
   input,
 }) => {
   const classes = useStyles();
-  let navigate = useNavigate();
 
   return (
-    <div className="authWrapper">
-      <Card
-        sx={{
-          maxWidth: 375,
-          margin: '0',
-          position: 'absolute',
-          top: '40%',
-          left: '40%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        }}
-      >
+    <div className={classes.authWrapper}>
+      <Card className={classes.cardBox}>
         <CardContent>
           <form onSubmit={handleSubmit} noValidate>
             <Grid
@@ -141,7 +146,7 @@ export const Auth = ({
                 />
               </Grid>
             </Grid>
-            <Grid item xs={12} className="authButton">
+            <Grid item xs={12} className={classes.authButton}>
               <Button type="submit" variant="outlined">
                 LOGIN
               </Button>

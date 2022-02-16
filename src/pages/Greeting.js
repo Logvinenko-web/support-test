@@ -12,7 +12,8 @@ export const Greeting = ({
         <div className="star">
           <div>
             <p class="center">ТЕСТ I</p>
-            <p> НОВАЯ НАДЕЖДА ДЛЯ CУПОРТА</p>
+            <p> НОВА НАДІЯ ДЛЯ CУПОРТА</p>
+          <p className="spanGreeting">Тест можна пройти лише один раз, фіксується час на відповідь, правильна відповідь не відображається</p>
             <Button onClick={redirectToQuize} variant="outlined">
               Почати
             </Button>

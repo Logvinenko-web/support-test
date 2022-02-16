@@ -14,26 +14,23 @@ export const QuizeContainer = () => {
   const history = useNavigate();
 
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    dispatch(pushQuestion());
-  }, []);
   const { questionList, status } = useSelector(
     questionSelectors.selectQuestion
   );
-
-  // useEffect(
-  //   () => {
-  //     // e.preventDefault();
-  //     dispatch(pushAnswer({questionId: '1', answerId: '1'}));
-  //   },
-  //   [dispatch]
-  // );
+  useEffect(() => {
+    if(status === SUCCESS && questionList.length === 0){
+      history(routing().result);
+    }
+  },[status])
+  useEffect(() => {
+    dispatch(pushQuestion());
+  }, []);
+  
 
   const handleAnswerSubmit = (variantId, indexQuestion) => {
-    // dispatch(pushAnswer({questionId: questionList[indexQuestion].id.toString(), variantId: variantId.toString()}));
+     dispatch(pushAnswer({questionId: questionList[indexQuestion].id.toString(), variantId: variantId.toString()}));
     if (questionList.length - 1 === index) {
-      history(routing().greeting);
+      history(routing().result);
     } else {
       setIndex(index + 1);
     }

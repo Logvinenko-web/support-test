@@ -3,5 +3,7 @@ export default function routing(params) {
     root: '/',
     quize: '/quize',
     greeting: '/greeting',
+    result: '/result',
+    adminPanel: '/admin-panel',
   };
 }

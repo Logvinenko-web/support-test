@@ -6,7 +6,7 @@ import {
   takeLatest,
   takeEvery,
 } from 'redux-saga/effects';
-import UserService from '../../services/user.service';
+import { UserService } from '../../services/user.service';
 import Notification from '../../services/notification.service';
 import { signInSelectors } from './signInSelectors';
 import {

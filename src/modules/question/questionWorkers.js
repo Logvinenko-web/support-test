@@ -6,7 +6,7 @@ import {
   takeLatest,
   takeEvery,
 } from 'redux-saga/effects';
-import QuestionService from '../../services/question.service';
+import {QuestionService} from '../../services/question.service';
 import Notification from '../../services/notification.service';
 import { questionInSelectors } from './questionSelectors';
 import { pushQuestion, saveQuestion } from './questionActions';
