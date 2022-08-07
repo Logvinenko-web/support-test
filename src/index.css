@@ -12,19 +12,36 @@ code {
     monospace;
 }
 .authWrapper {
-  
   /* position: relative; */
   /* color: white; */
 }
-
-.starWrapper {
+.loadingBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url(./assets/Death_Stari.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card-container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 20px 0px 20px 0px; */
+  justify-content: space-between;
+}
+.welcomeContainer.h3 {
+  margin: 0 !important;
+}
+/* .starWrapper {
   
   background-color: black;
   width: 100%;
   height: 100vh;
   color: #ff6;
-}
-.greetingContainer {
+} */
+/* .greetingContainer {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -32,9 +49,9 @@ code {
   right: 0;
   transform-origin: 50% 17%;
   transform: perspective(200px) rotateX(20deg);
-}
+} */
 
-.star {
+/* .star {
   position: absolute;
   top: -100px;
   bottom: 0;
@@ -44,7 +61,7 @@ code {
   font-size: 50px;
   text-align: center;
   font-family: sans-serif;
-}
+} */
 .resultWrapper {
   display: flex;
   justify-content: center;
@@ -52,13 +69,13 @@ code {
   width: 100%;
   height: 100vh;
 }
-.resultText{
+.resultText {
   padding-top: 30px;
-  font-size:40px;
+  font-size: 40px;
   color: #ff6;
   text-align: center;
 }
-.resultBox{
+.resultBox {
   background: url(./assets/May_the_4th_be_with_you_\(Star_Wars_Day\).gif);
   background-size: cover;
   width: 40%;
@@ -72,7 +89,7 @@ code {
 .spanGreeting {
   font-size: 20px;
 }
-.star > div {
+/* .star > div {
   padding-top: 200px;
   animation: autoscroll 5s linear;
   transition-timing-function: ease;
@@ -86,7 +103,7 @@ code {
   to {
     margin-top: -100px;
   }
-}
+} */
 .result {
   display: flex;
   justify-content: center;
@@ -94,14 +111,18 @@ code {
   font-size: 30px;
 }
 .admin-panel {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content:center;
-  align-items:center;
-  background: url(./assets/adminWallper.jpg);
-  background-size: cover;
+  justify-content:start;
+  align-items:start;
+  /* background: url(./assets/adminWallper.jpg); */
+  /* background-size: cover;
   width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
+}
+.correct {
+  font-size: 16px;
+  color: green;
 }

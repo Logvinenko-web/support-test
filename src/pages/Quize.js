@@ -60,7 +60,6 @@ export const Quize = ({
   const avatarMap = ['A', 'B', 'C', 'D'];
   return (
     <Grid
-      Grid
       container
       spacing={2}
       className={classes.quizeWrapper}
@@ -96,6 +95,7 @@ export const Quize = ({
         {!!questionList.length &&
           questionList[currentQuestionIndex].variants.map((item, i) => (
             <Grid
+              key={String(i)}
               container
               item
               xs={12}

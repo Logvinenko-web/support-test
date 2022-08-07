@@ -4,11 +4,11 @@ import Paper from '@mui/material/Paper';
 
 export default function Result() {
   return (
-    <div style={{background:'black'}}>
-    <div className="resultText">ДЯКУЄМО ЗА ТЕСТУВАННЯ</div>
-    <div className="resultWrapper">
-      <div className="resultBox"></div>
-    </div>
+    <div style={{ background: 'black' }}>
+      <div className="resultText">ДЯКУЄМО ЗА ТЕСТУВАННЯ</div>
+      <div className="resultWrapper">
+        <div className="resultBox"></div>
+      </div>
     </div>
     // <Box
     //   sx={{

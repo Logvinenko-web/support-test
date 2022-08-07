@@ -9,6 +9,8 @@ import { AdmineRoute } from './components/AdmineRoute/AdmineRoute';
 import { PublicRoute } from './components/PublicRoure/PublicRoute';
 import { AuthContainer } from './pages/AuthContainer';
 import { AdminPanelContainer } from './pages/AdminPanelContainer';
+import { FirstLineContainer } from './pages/FirstLineContainer';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import Result from './pages/Result';
 const theme = createTheme({});
@@ -55,6 +57,14 @@ function App() {
             <AdmineRoute>
               <AdminPanelContainer />
             </AdmineRoute>
+          }
+        />
+        <Route
+          path="/first-line"
+          element={
+            <PrivateRoute>
+              <FirstLineContainer />
+            </PrivateRoute>
           }
         />
       </Routes>

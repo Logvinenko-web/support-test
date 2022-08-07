@@ -18,6 +18,9 @@ const questionList = handleActions(
 );
 
 export const question = combineReducers({
-  status: makeStatusWithResetReducer(actions.pushQuestion, actions.clearAll),
+  getQuestionstatus: makeStatusWithResetReducer(
+    actions.pushQuestion,
+    actions.clearAll
+  ),
   questionList,
 });

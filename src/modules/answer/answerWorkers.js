@@ -6,7 +6,6 @@ import { pushAnswer } from './answerActions';
 function* answerWorker({ payload }) {
   try {
     yield put(pushAnswer.request());
-    console.log('answer', payload);
     yield call(AnswerService.answer, payload);
     yield put(pushAnswer.success());
   } catch (e) {

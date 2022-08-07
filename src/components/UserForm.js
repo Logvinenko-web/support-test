@@ -9,55 +9,51 @@ import MenuItem from '@mui/material/MenuItem';
 import { makeStyles } from '@mui/styles/index';
 
 const useStyles = makeStyles((theme) => ({
-    
-    cardBox: {
-      width: '100wh',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    },
-    label: {
-      color: theme.palette.common.white,
-      '&$focused': {
-        color: theme.palette.common.white,
-      },
-    },
-    focused: {
+  cardBox: {
+    width: '100wh',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  label: {
+    color: theme.palette.common.white,
+    '&$focused': {
       color: theme.palette.common.white,
     },
-    outlinedInput: {
-      '&$focused $notchedOutline': {
-        borderColor: theme.palette.common.white,
-      },
-      '& $notchedOutline': {
-        border: `1px solid ${theme.palette.common.white}`,
-      },
-      '&:hover $notchedOutline': {
-        border: `1px solid ${theme.palette.primary.light}`,
-      },
+  },
+  focused: {
+    color: theme.palette.common.white,
+  },
+  outlinedInput: {
+    '&$focused $notchedOutline': {
+      borderColor: theme.palette.common.white,
     },
-    authButton: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+    '& $notchedOutline': {
+      border: `1px solid ${theme.palette.common.white}`,
     },
-    authButtonText:{
-        color: 'white'
+    '&:hover $notchedOutline': {
+      border: `1px solid ${theme.palette.primary.light}`,
     },
-    notchedOutline: {},
-    helperText: {
-      color: theme.palette.error.light,
-    },
-    selectUser: {
-        color:'white',
-        border: `1px solid ${theme.palette.primary.light}`
-    }
-  }));
+  },
+  authButton: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  authButtonText: {
+    color: 'white',
+  },
+  notchedOutline: {},
+  helperText: {
+    color: theme.palette.error.light,
+  },
+  selectUser: {
+    color: 'white',
+    border: `1px solid ${theme.palette.primary.light}`,
+  },
+}));
 export const UserForm = ({ handleSubmit, handleChange, input }) => {
-    const classes = useStyles();
-
+  const classes = useStyles();
   return (
-    <Card
-   className={classes.cardBox}
-    >
+    <Card className={classes.cardBox}>
       <CardContent>
         <form onSubmit={handleSubmit} noValidate>
           <Grid
@@ -84,23 +80,23 @@ export const UserForm = ({ handleSubmit, handleChange, input }) => {
                 onChange={handleChange}
                 // helperText={errors.userName}
                 value={input.userName}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.label,
-                      focused: classes.focused,
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.outlinedInput,
-                      focused: classes.focused,
-                      notchedOutline: classes.notchedOutline,
-                      input: classes.input,
-                    },
-                  }}
-                  FormHelperTextProps={{
-                    className: classes.helperText,
-                  }}
+                InputLabelProps={{
+                  classes: {
+                    root: classes.label,
+                    focused: classes.focused,
+                  },
+                }}
+                InputProps={{
+                  classes: {
+                    root: classes.outlinedInput,
+                    focused: classes.focused,
+                    notchedOutline: classes.notchedOutline,
+                    input: classes.input,
+                  },
+                }}
+                FormHelperTextProps={{
+                  className: classes.helperText,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -120,23 +116,23 @@ export const UserForm = ({ handleSubmit, handleChange, input }) => {
                 onChange={handleChange}
                 // helperText={errors.password}
                 value={input.password}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.label,
-                      focused: classes.focused,
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.outlinedInput,
-                      focused: classes.focused,
-                      notchedOutline: classes.notchedOutline,
-                      input: classes.input,
-                    },
-                  }}
-                  FormHelperTextProps={{
-                    className: classes.helperText,
-                  }}
+                InputLabelProps={{
+                  classes: {
+                    root: classes.label,
+                    focused: classes.focused,
+                  },
+                }}
+                InputProps={{
+                  classes: {
+                    root: classes.outlinedInput,
+                    focused: classes.focused,
+                    notchedOutline: classes.notchedOutline,
+                    input: classes.input,
+                  },
+                }}
+                FormHelperTextProps={{
+                  className: classes.helperText,
+                }}
               />
               <Select
                 className={classes.selectUser}
@@ -152,12 +148,12 @@ export const UserForm = ({ handleSubmit, handleChange, input }) => {
               </Select>
             </Grid>
           </Grid>
-          <Grid
-            item
-            xs={12}
-             className={classes.authButton}
-          >
-            <Button type="submit" className={classes.authButtonText} variant="outlined">
+          <Grid item xs={12} className={classes.authButton}>
+            <Button
+              type="submit"
+              className={classes.authButtonText}
+              variant="outlined"
+            >
               Create User
             </Button>
           </Grid>

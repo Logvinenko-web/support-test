@@ -5,6 +5,7 @@ import routing from '../routing/routing';
 import { useNavigate } from 'react-router-dom';
 import { signInSelectors } from '../modules/signIn/signInSelectors';
 import { REQUEST, SUCCESS } from '../constants/constants';
+import { Loader } from '../components/Loader';
 import {
   clearAllErrors,
   pushSignIn,
@@ -45,12 +46,18 @@ export const AuthContainer = () => {
 
   const loading = status === REQUEST;
   return (
-    <Auth
-      errors={errors}
-      input={input}
-      handleSubmit={handleSubmit}
-      loading={loading}
-      handleChange={handleChange}
-    />
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Auth
+          errors={errors}
+          input={input}
+          handleSubmit={handleSubmit}
+          loading={loading}
+          handleChange={handleChange}
+        />
+      )}
+    </>
   );
 };

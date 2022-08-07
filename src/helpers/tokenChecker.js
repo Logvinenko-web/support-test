@@ -17,12 +17,12 @@ export const saveToken = (token) => {
 export const saveTokenSession = (token) => {
   sessionStorage.setItem('token', token);
 };
-export const isAdmin = () =>{
-  const token = localStorage.getItem('token')
-  if(token){
+export const isAdmin = () => {
+  const token = localStorage.getItem('token');
+  if (token) {
     try {
-      const {role} = JWTDecode(token);
-      if(role==='ADMIN'){
+      const { role } = JWTDecode(token);
+      if (role === 'ADMIN') {
         return true;
       }
     } catch (error) {
@@ -30,4 +30,4 @@ export const isAdmin = () =>{
     }
   }
   return false;
-}
+};

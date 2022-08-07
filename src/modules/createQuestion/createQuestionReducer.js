@@ -5,53 +5,57 @@ import { makeStatusWithResetReducer } from '../../helpers/reduxHelpers';
 
 const createQuestionInitial = {
   content: '',
+  belongsToCategoryId: '1',
   variants: [
     {
       id: '0',
-      variant: '', 
+      variant: '',
       isCorrect: false,
     },
     {
       id: '1',
-      variant: '', 
+      variant: '',
       isCorrect: false,
     },
     {
       id: '2',
-      variant: '', 
+      variant: '',
       isCorrect: false,
     },
     {
       id: '3',
-      variant: '', 
+      variant: '',
       isCorrect: true,
-    }
+    },
   ],
 };
 
 const createQuestionInput = handleActions(
   {
     [actions.saveCreateQuestionField.TRIGGER](state, { payload }) {
-      if(['0', '1', '2', '3'].includes(payload.id)){        
-        return  {...state, variants:state.variants.map((variant)=>{
-          if(variant.id === payload.id && payload.type !=='checkbox'){
-            return {...variant, variant:payload.value}
-          }else if(['0', '1', '2', '3'].includes(payload.id) && payload.type ==='checkbox') {
-            if(variant.id === payload.id) {
-              console.log('nepopadem')
-              return {...variant, isCorrect:!variant.isCorrect}
-            }else{
-              return {...variant, isCorrect:false}
+      if (['0', '1', '2', '3'].includes(payload.id)) {
+        return {
+          ...state,
+          variants: state.variants.map((variant) => {
+            if (variant.id === payload.id && payload.type !== 'checkbox') {
+              return { ...variant, variant: payload.value };
+            } else if (
+              ['0', '1', '2', '3'].includes(payload.id) &&
+              payload.type === 'checkbox'
+            ) {
+              if (variant.id === payload.id) {
+                return { ...variant, isCorrect: !variant.isCorrect };
+              } else {
+                return { ...variant, isCorrect: false };
+              }
+            } else {
+              return variant;
             }
-
-          }else{
-            return variant
-          }
-        })}
-      }else {
+          }),
+        };
+      } else {
         return { ...state, [payload.name]: payload.value };
       }
-     
     },
     [actions.clearAll.TRIGGER]() {
       return createQuestionInitial;
@@ -79,7 +83,10 @@ const createQuestionInput = handleActions(
 // );
 
 export const createQuestion = combineReducers({
-  status: makeStatusWithResetReducer(actions.pushCreateQuestion, actions.clearAll),
+  createQuestionstatus: makeStatusWithResetReducer(
+    actions.pushCreateQuestion1,
+    actions.clearAll
+  ),
   inputQuestion: createQuestionInput,
   // errors: signInErrors,
 });

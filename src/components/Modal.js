@@ -12,13 +12,12 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
-  background: 'black'
+  background: 'black',
 };
 
 export const MuiModal = ({ children, handleClose, open }) => {
   return (
-    <div>  
-      
+    <div>
       <Modal
         open={open}
         onClose={handleClose}

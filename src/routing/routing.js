@@ -5,5 +5,6 @@ export default function routing(params) {
     greeting: '/greeting',
     result: '/result',
     adminPanel: '/admin-panel',
+    firstLine: '/first-line',
   };
 }

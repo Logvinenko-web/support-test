@@ -6,16 +6,15 @@ import {
   takeLatest,
   takeEvery,
 } from 'redux-saga/effects';
-import {QuestionService} from '../../services/question.service';
+import { QuestionService } from '../../services/question.service';
 import Notification from '../../services/notification.service';
-import { questionInSelectors } from './questionSelectors';
 import { pushQuestion, saveQuestion } from './questionActions';
 // import Validation from '../../services/validation.service';
 
-function* questionWorker() {
+function* questionWorker({ payload }) {
   try {
     yield put(pushQuestion.request());
-    const data = yield call(QuestionService.question);
+    const data = yield call(QuestionService.question, payload);
     yield put(saveQuestion(data));
     yield put(pushQuestion.success());
   } catch (e) {

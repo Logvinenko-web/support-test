@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { questionSelectors } from '../modules/question/questionSelectors';
 import { REQUEST, SUCCESS } from '../constants/constants';
 import routing from '../routing/routing';
+import { Loader } from '../components/Loader';
 
 import { pushQuestion } from '../modules/question/questionActions';
 import { pushAnswer } from '../modules/answer/answerActions';
@@ -18,17 +19,18 @@ export const QuizeContainer = () => {
     questionSelectors.selectQuestion
   );
   useEffect(() => {
-    if(status === SUCCESS && questionList.length === 0){
+    if (status === SUCCESS && questionList.length === 0) {
       history(routing().result);
     }
-  },[status])
-  useEffect(() => {
-    dispatch(pushQuestion());
-  }, []);
-  
+  }, [status]);
 
   const handleAnswerSubmit = (variantId, indexQuestion) => {
-     dispatch(pushAnswer({questionId: questionList[indexQuestion].id.toString(), variantId: variantId.toString()}));
+    dispatch(
+      pushAnswer({
+        questionId: questionList[indexQuestion].id.toString(),
+        variantId: variantId.toString(),
+      })
+    );
     if (questionList.length - 1 === index) {
       history(routing().result);
     } else {
@@ -39,15 +41,13 @@ export const QuizeContainer = () => {
   return (
     <>
       {loading ? (
-        <div>Loading....</div>
+        <Loader />
       ) : (
         <Quize
           currentQuestionIndex={index}
           questionList={questionList}
-          // setIndex={setIndex}
           handleAnswerSubmit={handleAnswerSubmit}
           //   errors={errors}
-          //   loading={loading}
         />
       )}
     </>
