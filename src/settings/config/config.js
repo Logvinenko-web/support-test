@@ -1,6 +1,7 @@
 const dev = {
-  apiUrl: 'http://localhost:3000',
-  // 'https://powerful-peak-56207.herokuapp.com/',
+  apiUrl: 'https://6f6e-178-158-192-3.ngrok.io ',
+  // 'http://localhost:3000',
+  
 };
 
 const prod = {
