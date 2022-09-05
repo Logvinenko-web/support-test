@@ -1,6 +1,7 @@
 const dev = {
-  apiUrl: 'https://6f6e-178-158-192-3.ngrok.io',
-  // ' http://127.0.0.1:4040 ',
+  apiUrl: 
+  'https://869b-178-158-195-152.ngrok.io',
+  // 'http://127.0.0.1:3000',
 };
 
 const prod = {
