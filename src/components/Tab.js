@@ -303,6 +303,17 @@ export const TabDays = ()=> {
                   documents:[
                   ]
                 },
+                {
+                  id: '4',
+                  name: 'Питання з якими співробітники першої лінії можуть допомогти самостійно',
+                  documents:[
+                    {
+                      id: '1',
+                      name: 'Питання',
+                      link: 'https://docs.google.com/document/d/1eVQp2DAaZlsFnAdlcD2M7gPLWRDlRoDh-fNqnmTVPk8/edit?usp=sharing'
+                    }
+                  ]
+                },
                 ],
                 
                 },
