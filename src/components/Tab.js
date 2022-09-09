@@ -268,8 +268,13 @@ export const TabDays = ()=> {
                 documents:[
                   {
                   id: '1',
-                  name: 'Питання',
+                  name: 'Питання загальні',
                   link: 'https://docs.google.com/document/d/16OPTJamqmzUKBYxWARQ4L9XIile1bW_85BOcpWRp1yk/edit'
+                },
+                {
+                  id: '1',
+                  name: 'Питання',
+                  link: 'https://docs.google.com/document/d/148T2HK579GGA7t4FCRqCvkPTLouRbngJtoA-09j2DoY/edit?usp=sharing'
                 }
                 ]
               },
